@@ -1,0 +1,46 @@
+
+<div *ngIf="enigme">
+    <h1>{{enigme?.month}} {{enigme?.year}}</h1>
+
+    <div *ngIf="!enigme.authorized" class="enigme-unauthorized">
+        <p>Enigme pas encore disponible</p>
+    </div>
+    <div *ngIf="enigme.authorized">
+
+        
+        <div *ngIf="!enigme.found" class="enigme-layout">
+            <img [src]="enigme.imgEnigme" height="50%" width="50%"/>
+            <div>
+                <form [formGroup]="checkoutForm" (ngSubmit)="onSubmitResponse()">
+                    <label for="reponseEnigmeField">Votre réponse : </label>
+                    <input id="reponseEnigmeField"  formControlName="response">
+                    
+                    <button class="button" type="submit">Valider</button>
+                </form>
+                
+            </div>
+        </div>
+        
+        <div *ngIf="enigme.found" class="enigme-layout-found">
+            <p>Bravo !!! Vous avez trouvé la réponse</p><br/>
+            <p>
+                Maintenant vous devez vous rendre à l'endroit indiqué, et trouver le géo-cache affiché.
+                <br/>Une fois le géo-cache trouvé, vous aurez plusieurs missions :
+                
+            </p>
+            <ul>
+                <li>
+                    Filmez-vous en racontant une anecdote à propos du lieu ou des personnes associées au lieu et qui vous sont chères
+                </li>
+                <li>Faites une deuxième vidéo ou une photo où vous "mimez" l'endroit ou les personnes associées au lieu et qui vous sont chères</li>
+                <li>Ouvrez le géo-cache et réalisez le gage avant le mois prochain. </li>
+            </ul>
+            <p>Mettez vos photos/vidéos/preuves de gages à disposition de vos témoins adorés</p>
+            <img [src]="enigme.imgGeoCaching" height="50%" width="50%"/>
+            <img [src]="enigme.imgHiddenObject" height="50%" width="50%"/>
+        </div>
+        
+    </div>
+
+</div>
+
