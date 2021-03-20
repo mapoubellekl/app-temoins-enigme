@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     EnigmeComponent, 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ReactiveFormsModule,
     AppRoutingModule,
     MatMenuModule,
