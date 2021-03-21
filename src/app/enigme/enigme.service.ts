@@ -3,9 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Enigme} from './enigme';
 
 
- const baseUrl = 'http://localhost:4201';
-//const baseUrl = 'https://privategeocachingserver.netlify.app:4201';
-//const baseUrl = 'https://available-assorted-pedestrian.glitch.me:4201';
+// const baseUrl = 'http://localhost:4201';
+const baseUrl = 'https://shielded-headland-84561.herokuapp.com:22049/';
 
 
 @Injectable({
@@ -32,7 +31,9 @@ export class EnigmeService {
   }
 
   getEnigme(id:number){
-    return this.request('get', `${baseUrl}/enigme/${id}`);
+    let res = this.request('get', `${baseUrl}/enigme/${id}`);
+    console.log('Resultat get ' + JSON.stringify(res));
+    return res;
   }
   checkEnigme(id:number, response:string){
     return this.request('post', `${baseUrl}/check-enigme/${id}`, {response});
