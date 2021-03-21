@@ -4,7 +4,7 @@ import { Enigme} from './enigme';
 
 
 // const baseUrl = 'http://localhost:4201';
-const baseUrl = 'https://shielded-headland-84561.herokuapp.com:22049/';
+const baseUrl = 'https://shielded-headland-84561.herokuapp.com';
 
 
 @Injectable({
