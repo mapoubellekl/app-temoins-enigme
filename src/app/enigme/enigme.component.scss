@@ -1,10 +1,24 @@
-.enigme-layout{
-    text-align: center;
+.enigme-layout {
+  text-align: center;
 }
-.enigme-layout-found{
-}
-.enigme-layout-found img{
 
-    text-align: center;
-    margin: 1.5em;
+.enigme-layout-found img {
+  text-align: center;
+  margin: 1.5em;
+}
+
+.left-img {
+  position: relative;
+  top: 4px;
+}
+
+.fieldReponse {
+  margin: 1em;
+}
+
+.enigmeContainer img {
+  border-radius: 13px;
+}
+.geocach-images {
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 
-<div *ngIf="enigme">
-    <h1>{{enigme?.month}} {{enigme?.year}}</h1>
+<div *ngIf="enigme" class="enigmeContainer">
+    <h1 class="mat-display-1">{{enigme?.month}} {{enigme?.year}}</h1>
 
     <div *ngIf="!enigme.authorized" class="enigme-unauthorized">
         <p>Enigme pas encore disponible</p>
@@ -12,10 +12,11 @@
             <img [src]="enigme.imgEnigme" height="50%" width="50%"/>
             <div>
                 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmitResponse()">
-                    <label for="reponseEnigmeField">Votre réponse : </label>
-                    <input id="reponseEnigmeField"  formControlName="response">
-                    
-                    <button class="button" type="submit">Valider</button>
+                    <mat-form-field appearance="fill" class="fieldReponse">
+                        <mat-label for="reponseEnigmeField">Votre réponse : </mat-label>
+                        <input matInput id="reponseEnigmeField" formControlName="response">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="button" type="submit">Valider</button>
                 </form>
                 
             </div>
@@ -36,11 +37,27 @@
                 <li>Ouvrez le géo-cache et réalisez le gage avant le mois prochain. </li>
             </ul>
             <p>Mettez vos photos/vidéos/preuves de gages à disposition de vos témoins adorés</p>
-            <img [src]="enigme.imgGeoCaching" height="50%" width="50%"/>
-            <img [src]="enigme.imgHiddenObject" height="50%" width="50%"/>
+            <div class="geocach-images">
+                <img [src]="enigme.imgGeoCaching" height="50%" width="50%" />
+                <img [src]="enigme.imgHiddenObject" height="50%" width="50%" />
+            </div>
         </div>
         
     </div>
 
+</div>
+
+<div *ngIf="!enigme">
+<h1>Chers futurs mariés,</h1>
+<p>A partir de ce jour, votre vie telle que vous la connaissiez va disparaitre.<br>
+A partir d’aujourd’hui et jusqu’au jour du mariage, nous ne cesserons de vous occuper l’esprit !<br>
+Quoi ? Vous vous imaginiez tranquillement préparer cet évènement ? eh bien non !</p>
+<p>Afin d’agrémenter cette organisation, vous débloquerez, chaque mois une nouvelle énigme.<br>
+En résolvant, cette énigme, vous obtiendrez un mot de passe qui permettra, une fois validé, 
+de commencer votre géo-caching du mois.
+</p>
+<p>Rendez-vous à l’endroit indiqué par les coordonnées GPS, nous aurons caché un objet contenant des instructions.<br>
+Si vous vous trouvez en difficulté, nous pourrons vous envoyer des indices ou des images pour vous aider.
+A vos marques, prêts et partez pour la première énigme !</p>
 </div>
 
