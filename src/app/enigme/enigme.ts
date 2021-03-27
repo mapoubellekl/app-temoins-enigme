@@ -8,10 +8,13 @@ export class Enigme{
 
     imgGeoCaching: string;
     imgHiddenObject: string;
+
+    geocachText: string;
     
     constructor(){
         this.imgHiddenObject="";
         this.imgGeoCaching="";
         this.imgEnigme="";
+        this.geocachText = "";
     }
 }

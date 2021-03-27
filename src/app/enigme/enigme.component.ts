@@ -70,6 +70,7 @@ export class EnigmeComponent implements OnInit, OnChanges {
       this.loading = true;
       if(this.idEnigme){
         var tmpEnigme = await this.enigmeService.checkEnigme(this.idEnigme, this.checkoutForm.get('response')?.value);
+        this.checkoutForm.get('response')?.setErrors(tmpEnigme.found ? null : {'invalid':true, 'message':'Mot de passe invalide'});
         this.transformImagesAndUpdate(tmpEnigme);
       }
       this.loading = false;

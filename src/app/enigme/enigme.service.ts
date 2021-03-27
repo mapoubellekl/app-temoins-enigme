@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Enigme} from './enigme';
 
 
-// const baseUrl = 'http://localhost:4201';
-const baseUrl = 'https://shielded-headland-84561.herokuapp.com';
+ const baseUrl = 'http://localhost:4201';
+//const baseUrl = 'https://shielded-headland-84561.herokuapp.com';
 
 
 @Injectable({
